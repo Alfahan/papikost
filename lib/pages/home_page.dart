@@ -53,6 +53,9 @@ class HomePage extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
+                    SizedBox(
+                      width: 24,
+                    ),
                     CityCard(
                       City(id: 1, name: 'Jakarta', imageUrl: 'assets/pic.png'),
                     ),
@@ -63,7 +66,8 @@ class HomePage extends StatelessWidget {
                       City(
                           id: 2,
                           name: 'Bandung',
-                          imageUrl: 'assets/pic(1).png'),
+                          imageUrl: 'assets/pic (1).png',
+                          isPopular: true),
                     ),
                     SizedBox(
                       width: 20,
@@ -72,7 +76,7 @@ class HomePage extends StatelessWidget {
                       City(
                           id: 3,
                           name: 'Surabaya',
-                          imageUrl: 'assets/pic(2).png'),
+                          imageUrl: 'assets/pic (2).png'),
                     ),
                     SizedBox(
                       width: 20,
