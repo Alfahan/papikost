@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:papikost/models/city.dart';
+import 'package:papikost/models/space.dart';
 import 'package:papikost/theme.dart';
 import 'package:papikost/widgets/city_card.dart';
 import 'package:papikost/widgets/space_card.dart';
@@ -104,21 +105,53 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 16,
               ),
-              Column(
-                children: [
-                  SpaceCard(),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  SpaceCard(),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  SpaceCard(),
-                  SizedBox(
-                    height: 30,
-                  ),
-                ],
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: edge,
+                ),
+                child: Column(
+                  children: [
+                    SpaceCard(
+                      Space(
+                          id: 1,
+                          name: 'Villa Dago',
+                          imageUrl: 'assets/image 14.png',
+                          price: 52,
+                          city: 'Bandung',
+                          country: 'Indonesia',
+                          rating: 4),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    SpaceCard(
+                      Space(
+                          id: 2,
+                          name: 'Rumah Oma',
+                          imageUrl: 'assets/image 13.png',
+                          price: 52,
+                          city: 'Bogor',
+                          country: 'Indonesia',
+                          rating: 5),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    SpaceCard(
+                      Space(
+                          id: 3,
+                          name: 'Rumah Siapa',
+                          imageUrl: 'assets/image 15.png',
+                          price: 52,
+                          city: 'Jakarta',
+                          country: 'Indonesia',
+                          rating: 5),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                  ],
+                ),
               )
             ],
           ),
