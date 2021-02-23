@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:papikost/models/city.dart';
 import 'package:papikost/theme.dart';
 import 'package:papikost/widgets/city_card.dart';
+import 'package:papikost/widgets/space_card.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -14,6 +15,7 @@ class HomePage extends StatelessWidget {
           ),
           child: ListView(
             children: [
+              // NOTE: Title
               Padding(
                 padding: EdgeInsets.only(left: edge),
                 child: Text(
@@ -36,6 +38,7 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
+              // NOTE : Popular City
               Padding(
                 padding: EdgeInsets.only(left: edge),
                 child: Text(
@@ -83,6 +86,27 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              // NOTE: Recommended Space
+              Padding(
+                padding: EdgeInsets.only(left: edge),
+                child: Text(
+                  'Recommended Space',
+                  style: regularTextStyle.copyWith(
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Column(
+                children: [
+                  SpaceCard(),
+                ],
               )
             ],
           ),
