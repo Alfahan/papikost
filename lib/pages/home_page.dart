@@ -9,6 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        bottom: false,
         child: Padding(
           padding: EdgeInsets.symmetric(
             vertical: edge,
@@ -106,6 +107,17 @@ class HomePage extends StatelessWidget {
               Column(
                 children: [
                   SpaceCard(),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  SpaceCard(),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  SpaceCard(),
+                  SizedBox(
+                    height: 30,
+                  ),
                 ],
               )
             ],
