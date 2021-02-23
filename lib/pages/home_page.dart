@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:papikost/models/city.dart';
 import 'package:papikost/models/space.dart';
+import 'package:papikost/models/tips.dart';
 import 'package:papikost/theme.dart';
+import 'package:papikost/widgets/bottom_navbar_item.dart';
 import 'package:papikost/widgets/city_card.dart';
 import 'package:papikost/widgets/space_card.dart';
+import 'package:papikost/widgets/tips_card.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -147,16 +150,87 @@ class HomePage extends StatelessWidget {
                           country: 'Indonesia',
                           rating: 5),
                     ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              // NOTE: TIPS & GUIDANCE
+              Padding(
+                padding: EdgeInsets.only(left: edge),
+                child: Text(
+                  'Tips & Guidance',
+                  style: regularTextStyle.copyWith(
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: edge),
+                child: Column(
+                  children: [
+                    TipsCard(
+                      Tips(
+                          id: 1,
+                          title: 'City Guidelines',
+                          imageUrl: 'assets/icon (1).png',
+                          updatedAt: '20 April'),
+                    ),
                     SizedBox(
-                      height: 30,
+                      height: 20,
+                    ),
+                    TipsCard(
+                      Tips(
+                          id: 1,
+                          title: 'Jakarta Fairlines',
+                          imageUrl: 'assets/icon.png',
+                          updatedAt: '11 Desember'),
                     ),
                   ],
                 ),
-              )
+              ),
+              SizedBox(
+                height: 50,
+              ),
             ],
           ),
         ),
       ),
+      floatingActionButton: Container(
+        height: 65,
+        width: MediaQuery.of(context).size.width - (2 * edge),
+        margin: EdgeInsets.symmetric(horizontal: edge),
+        decoration: BoxDecoration(
+          color: Color(0xffF6F7F8),
+          borderRadius: BorderRadius.circular(23),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            BottomNavbarItem(
+              imageUrl: 'assets/Icon_home_solid.png',
+              isActive: true,
+            ),
+            BottomNavbarItem(
+              imageUrl: 'assets/icon_mail.png',
+              isActive: false,
+            ),
+            BottomNavbarItem(
+              imageUrl: 'assets/icon_card.png',
+              isActive: false,
+            ),
+            BottomNavbarItem(
+              imageUrl: 'assets/icon_love.png',
+              isActive: false,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
