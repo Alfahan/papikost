@@ -55,7 +55,7 @@ class SpaceCard extends StatelessWidget {
                             height: 22,
                           ),
                           Text(
-                            "${space.rating}4/5",
+                            "${space.rating}/5",
                             style: whiteTextStyle.copyWith(fontSize: 13),
                           ),
                         ],

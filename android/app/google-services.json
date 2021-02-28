@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "44299117696",
+    "project_id": "papikost-81b8b",
+    "storage_bucket": "papikost-81b8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44299117696:android:36680d31417a62bc64f265",
+        "android_client_info": {
+          "package_name": "com.example.papikost"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "44299117696-34coso9tji3pfsihpjueu67kcueejsh6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWWCONsttoSSgcBTYZEMEoOyQXZbT8tn0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "44299117696-34coso9tji3pfsihpjueu67kcueejsh6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
