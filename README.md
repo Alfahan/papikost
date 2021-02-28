@@ -21,6 +21,6 @@ Detail Page :
 
 ![WhatsApp Image 2021-03-01 at 12 38 38 AM (4)](https://user-images.githubusercontent.com/49190810/109427844-c8bb5c00-7a26-11eb-89ef-b3185e845eec.jpeg)
 
-Error Page
+Error Page :
 
 ![WhatsApp Image 2021-03-01 at 12 42 27 AM](https://user-images.githubusercontent.com/49190810/109427913-1a63e680-7a27-11eb-89fc-79ee39bad48c.jpeg)
