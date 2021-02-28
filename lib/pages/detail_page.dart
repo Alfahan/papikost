@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:papikost/theme.dart';
+import 'package:papikost/widgets/facilites_item.dart';
 
 class DetailPage extends StatelessWidget {
   @override
@@ -50,10 +51,12 @@ class DetailPage extends StatelessWidget {
                       color: whiteColor,
                     ),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
                           height: 30,
                         ),
+                        // NOTE TITLE
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: edge),
                           child: Row(
@@ -114,6 +117,45 @@ class DetailPage extends StatelessWidget {
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        // NOTE MAIN FACILITIES
+                        Padding(
+                          padding: EdgeInsets.only(left: edge),
+                          child: Text(
+                            'Main Facilities',
+                            style: regularTextStyle.copyWith(
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: edge),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              FacilityItem(
+                                name: 'kitchen',
+                                imageUrl: 'assets/001-bar-counter.png',
+                                total: 2,
+                              ),
+                              FacilityItem(
+                                name: 'bedroom',
+                                imageUrl: 'assets/002-double-bed.png',
+                                total: 3,
+                              ),
+                              FacilityItem(
+                                name: 'Big Lemari',
+                                imageUrl: 'assets/003-cupboard.png',
+                                total: 2,
+                              ),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ),
