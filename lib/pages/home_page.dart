@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:papikost/models/city.dart';
 import 'package:papikost/models/space.dart';
 import 'package:papikost/models/tips.dart';
+import 'package:papikost/providers/space_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:papikost/theme.dart';
 import 'package:papikost/widgets/bottom_navbar_item.dart';
 import 'package:papikost/widgets/city_card.dart';
@@ -11,7 +13,12 @@ import 'package:papikost/widgets/tips_card.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var spaceProvider = Provider.of<SpaceProvider>(context);
+
+    // spaceProvider.getRecommendedSpaces();
+
     return Scaffold(
+      backgroundColor: whiteColor,
       body: SafeArea(
         bottom: false,
         child: ListView(
@@ -109,45 +116,30 @@ class HomePage extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                 horizontal: edge,
               ),
-              child: Column(
-                children: [
-                  SpaceCard(
-                    Space(
-                        id: 1,
-                        name: 'Villa Dago',
-                        imageUrl: 'assets/image 14.png',
-                        price: 52,
-                        city: 'Bandung',
-                        country: 'Indonesia',
-                        rating: 4),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  SpaceCard(
-                    Space(
-                        id: 2,
-                        name: 'Rumah Oma',
-                        imageUrl: 'assets/image 13.png',
-                        price: 52,
-                        city: 'Bogor',
-                        country: 'Indonesia',
-                        rating: 5),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  SpaceCard(
-                    Space(
-                        id: 3,
-                        name: 'Rumah Siapa',
-                        imageUrl: 'assets/image 15.png',
-                        price: 52,
-                        city: 'Jakarta',
-                        country: 'Indonesia',
-                        rating: 5),
-                  ),
-                ],
+              child: FutureBuilder(
+                future: spaceProvider.getRecommendedSpaces(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    List<Space> data = snapshot.data;
+
+                    int index = 0;
+
+                    return Column(
+                      children: data.map((item) {
+                        index++;
+                        return Container(
+                          margin: EdgeInsets.only(
+                            top: index == 1 ? 0 : 30,
+                          ),
+                          child: SpaceCard(item),
+                        );
+                      }).toList(),
+                    );
+                  }
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
               ),
             ),
             SizedBox(
