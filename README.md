@@ -1,4 +1,4 @@
-# papikost
+# PapiKost
 
 Figma : https://www.figma.com/file/TP9uUUhyqVuPkW6NgZTe6t/papikost
 
